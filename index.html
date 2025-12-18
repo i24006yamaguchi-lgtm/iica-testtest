@@ -2,9 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-
-    <!-- スマホ最適化（重要） -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>coco壱分析</title>
 
@@ -13,11 +11,10 @@
 
     <!-- PWA: theme color -->
     <meta name="theme-color" content="#000000" />
-    <meta name="color-scheme" content="light dark" />
 
     <!-- iOS: Add to Home Screen -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="coco分析" />
     <link rel="apple-touch-icon" href="image192.png" />
 
@@ -26,59 +23,24 @@
     <link rel="icon" type="image/png" sizes="512x512" href="image512.png" />
 
     <style>
-      /* 画面を完全にアプリ枠にする */
       html, body {
         margin: 0;
-        padding: 0;
-        width: 100%;
         height: 100%;
         overflow: hidden;
-        background: #000;
       }
-
-      /* iOSのノッチ/ホームバー領域を考慮 */
-      body {
-        padding-top: env(safe-area-inset-top);
-        padding-right: env(safe-area-inset-right);
-        padding-bottom: env(safe-area-inset-bottom);
-        padding-left: env(safe-area-inset-left);
-      }
-
-      /* iframeを常に画面いっぱいに固定（レイアウト崩れ防止） */
       iframe {
-        position: fixed;
-        top: env(safe-area-inset-top);
-        left: env(safe-area-inset-left);
-        right: env(safe-area-inset-right);
-        bottom: env(safe-area-inset-bottom);
-
-        width: auto;
-        height: auto;
-
+        width: 100%;
+        height: 100%;
         border: none;
         display: block;
-
-        /* スマホでのスクロール/タッチを自然に */
-        -webkit-overflow-scrolling: touch;
-      }
-
-      /* 100vh問題の保険（Android/Chromeでアドレスバーが伸縮する件） */
-      @supports (height: 100dvh) {
-        html, body {
-          height: 100dvh;
-        }
       }
     </style>
   </head>
-
   <body>
     <iframe
-      title="coco壱分析"
-      src="https://script.google.com/macros/s/AKfycbwi_AX8ULsfMJkWGSFHCJ5jIoiD1n-imfLpf5pTqGuZDVXnk9k7ryeEI87XdLJQVkU5/exec"
+      src="https://script.google.com/a/macros/iica.jp/s/AKfycbwUSxfOSTeIkccWc7Roh3omivUA19hFc7x00dizYoNCWqcskbZrZGJB9m3KKSHiGWQ7/exec"
       allow="clipboard-read; clipboard-write"
-      referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   </body>
 </html>
-
 
