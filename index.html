@@ -2,7 +2,8 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- iPhoneのノッチ/安全領域も考慮 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
     <title>coco壱分析</title>
 
@@ -23,27 +24,48 @@
     <link rel="icon" type="image/png" sizes="512x512" href="image512.png" />
 
     <style>
+      /* 画面全体をiframeに割り当て（モバイルの高さ変動に強い） */
       html, body {
         margin: 0;
+        padding: 0;
+        width: 100%;
         height: 100%;
+        background: #000;
         overflow: hidden;
       }
+
+      /* iPhoneの安全領域を確保しつつ全面表示 */
+      .frame-wrap {
+        position: fixed;
+        inset: 0;
+        padding-top: env(safe-area-inset-top);
+        padding-right: env(safe-area-inset-right);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+
+        /* 古い端末/ブラウザ対策 */
+        min-height: 100vh;
+        min-height: 100dvh;
+        box-sizing: border-box;
+      }
+
       iframe {
         width: 100%;
         height: 100%;
-        border: none;
+        border: 0;
         display: block;
+        background: #fff;
       }
     </style>
   </head>
+
   <body>
-    <iframe
-      src="https://script.google.com/macros/s/AKfycbyn9ov-DSTJxK4sfpoYKsJsn-fPI_P-zuRXUEvEW9l62xOh3fc8MEe85xeenU5r_S9t/exec"
-      allow="clipboard-read; clipboard-write"
-    ></iframe>
+    <div class="frame-wrap">
+      <iframe
+        src="https://script.google.com/macros/s/AKfycbwDsQByDFChVPTHSoeeJweqm91vjoz0L50wdAdMp8qqyWZBufwqkW_th7fPL_UNgDt2/exec"
+        allow="clipboard-read; clipboard-write"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
   </body>
 </html>
-
-
-
-
