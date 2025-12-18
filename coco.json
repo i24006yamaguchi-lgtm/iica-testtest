@@ -1,7 +1,7 @@
 {
     "name": "coco壱分析",
     "short_name": "coco分析",
-    "start_url": "https://github.com/i24006yamaguchi-lgtm/iica-testest.git",
+    "start_url": "https://github.com/i24006yamaguchi-lgtm/iica-testtest.git",
     "scope": ".",
     "display": "standalone",
     "theme_color": "#000000",
@@ -19,4 +19,5 @@
       }
     ]
   }
+
   
